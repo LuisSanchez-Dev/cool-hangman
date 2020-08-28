@@ -1,0 +1,275 @@
+{
+  "output_file": "config.json",  
+  "donate":{
+    "type"    : "button",
+    "label"   : "☕  ☕  Buy the dev a coffee  ☕  ☕",
+    "tooltip" : "Keep the development of free scripts going buying the developer a coffee!",
+    "function": "donate",
+    "wsevent" : "",
+    "group"   : ""
+  },
+  "contact":{
+    "type"    : "button",
+    "label"   : "Want a custom script?\n📧 Contact me!",
+    "tooltip" : "Click here to contact the script's developer luissanchezdev",
+    "function": "open_contact_me",
+    "wsevent" : "",
+    "group"   : ""
+  },  
+  "emotes":{
+    "type"    : "button",
+    "label"   : "🎨 Twitch emotes, sub badges, channel points image and logos\nby Tecno_Diana",
+    "tooltip" : "Click here to contact Tecno_Diana for Twitch emotes!",
+    "function": "open_contact_td",
+    "wsevent" : "",
+    "group"   : ""
+  }, 
+  "open_readme":{
+    "type"    : "button",
+    "label"   : "📰 Open the README",
+    "tooltip" : "Click here to view the script's documentation.",
+    "function": "open_readme",
+    "wsevent" : "",
+    "group"   : ""
+  }, 
+  "open_words":{
+    "type"    : "button",
+    "label"   : "✏ Edit words list",
+    "tooltip" : "Click here to edit the words list",
+    "function": "open_words",
+    "wsevent" : "",
+    "group"   : ""
+  },  
+  "open_ui_folder":{
+    "type"    : "button",
+    "label"   : "📁 Open UI folder",
+    "tooltip" : "Click here to open the UI/Overlay folder",
+    "function": "open_ui_folder",
+    "wsevent" : "",
+    "group"   : ""
+  },  
+  "cmd_play": {
+    "type"   : "textbox",
+    "value"  : "!starthang",
+    "label"  : "\nRemember to save the settings!\n\nCommand: start a game",
+    "tooltip": "Command to start a new hangman game",
+    "group"  : ""
+  },
+  "p_mod": {
+    "type": "dropdown",
+    "value": "Moderator",
+    "items": ["Moderator","Editor", "Caster"],
+    "label": "Permission: start a game",
+    "tooltip": "Only users with this permission can start a new game",
+    "group": ""
+  },
+  "n_play_every_seconds": {
+    "type"   : "numberbox",
+    "value"  : 600,
+    "label"  : "Number: seconds between automatic games",
+    "tooltip": "Start games automatically",
+    "group"  : ""
+  },
+  "n_tries_per_10_letters": {
+    "type"   : "numberbox",
+    "value"  : 10,
+    "label"  : "Number: tries per 10 letters\n * For example a value of 10 gives 1 chance per letter, a value of 20 gives 2 chances per letter, etc.",
+    "tooltip": "Amount of errors they can acummulate",
+    "group"  : ""
+  },
+  "cmd_guess": {
+    "type"   : "textbox",
+    "value"  : "!guess",
+    "label"  : "Command: guess a letter",
+    "tooltip": "Command to guess a letter",
+    "group"  : "User commands"
+  },  
+  "cmd_guessword": {
+    "type"   : "textbox",
+    "value"  : "!guessword",
+    "label"  : "Command: guess the word",
+    "tooltip": "Command to guess the entire word",
+    "group"  : "User commands"
+  },
+  "n_guess_cd": {
+    "type"   : "numberbox",
+    "value"  : 6,
+    "label"  : "Number: user cooldown in seconds",
+    "tooltip": "Prevent guess spamming with this cooldown",
+    "group"  : "User commands"
+  },
+  "n_letter_cost": {
+    "type"   : "numberbox",
+    "value"  : 10,
+    "label"  : "Number: letter command cost",
+    "tooltip": "Spend these points when guessing a letter",
+    "group"  : "Costs and Prizes"
+  },
+  "n_word_cost": {
+    "type"   : "numberbox",
+    "value"  : 25,
+    "label"  : "Number: Word command cost",
+    "tooltip": "Warning: sometimes this command does not make sense to use",
+    "group"  : "Costs and Prizes"
+  },
+  "n_letter_prize": {
+    "type"   : "numberbox",
+    "value"  : 12,
+    "label"  : "Number: Points amount for each letter guessed",
+    "tooltip": "Give this amount time the amount of letters found",
+    "group"  : "Costs and Prizes"
+  },
+  
+
+
+  
+  "msg_game_started": {
+    "type"   : "textbox",
+    "value"  : "Hangman started: $word, guess a letter with $lettercmd ($lettercost $currency) or a word with $wordcmd ($wordcost $currency)",
+    "label"  : "Game started\n  $word - hidden word\n  $lettercmd - letter command\n  $lettercost - letter cost\n  $wordcmd - word command\n  $cordcost - word command cost\n  $currency - currency name",
+    "tooltip": "Message shown when game starts",
+    "group"  : "Messages"
+  },
+  "msg_letter_found": {
+    "type"   : "textbox",
+    "value"  : "Letter $letter appeared $times times! $user wins $prize $currency!",
+    "label"  : "Letter guessed correctly\n  $letter - guessed letter\n  $times - how many times was the letter found\n  $user - correct user\n  $prize - prize\n  $currency - currency name",
+    "tooltip": "Shown when they use the letter command and guess correctly",
+    "group"  : "Messages"
+  },
+  "msg_word_guessed": {
+    "type"   : "textbox",
+    "value"  : "🎉🎉 $user guessed \"$word\" correctly! They get $prize $currency for the last $letters letters!",
+    "label"  : "Word guessed correctly\n  $user - correct user\n  $word -- main word\n  $prize - prize\n  $currency - currency name\n  $letters - amount of letters left",
+    "tooltip": "When someone guesses the entire word correctly",
+    "group"  : "Messages"
+  },
+  "msg_letter_not_in_word": {
+    "type"   : "textbox",
+    "value"  : "The letter $letter is not in the word :(",
+    "label"  : "Letter guessed incorrectly\n  $letter - guessed letter",
+    "tooltip": "Message shown when the user guesses a letter that is not in the main word",
+    "group"  : "Messages"
+  },
+  "msg_word_guessed_wrong": {
+    "type"   : "textbox",
+    "value"  : "$word is not the correct word :(",
+    "label"  : "Word guessed incorrectly\n  $word - guessed word",
+    "tooltip": "Message shown when the user guesses a word but they failed",
+    "group"  : "Messages"
+  },
+  "msg_no_permission": {
+    "type"   : "textbox",
+    "value"  : "You don't have permission to use this command!",
+    "label"  : "Not enough permissions",
+    "tooltip": "If an user with insufficient permissions tries to start a game, show this message",
+    "group"  : "Messages"
+  },
+  "msg_not_enough_points": {
+    "type"   : "textbox",
+    "value"  : "Sorry, you don't have enough $currency :(",
+    "label"  : "Not enough points\n  $currency - currency name",
+    "tooltip": "Shown when the user can't use a command because of low points",
+    "group"  : "Messages"
+  },
+  "msg_game_running": {
+    "type"   : "textbox",
+    "value"  : "A game is already running!",
+    "label"  : "Not enough points",
+    "tooltip": "Shown when the user can't use a command because of low points",
+    "group"  : "Messages"
+  },
+  "msg_max_tries_reached": {
+    "type"   : "textbox",
+    "value"  : "Max tries reached! The word was \"$word\"",
+    "label"  : "Max tries reached\n  $word - main word",
+    "tooltip": "When they guess incorrectly the maximum amount allowed, show this message",
+    "group"  : "Messages"
+  },
+  "msg_letter_already_guessed": {
+    "type"   : "textbox",
+    "value"  : "The letter $letter was already guessed!",
+    "label"  : "Letter repeated\n  $letter - guessed letter",
+    "tooltip": "If someone tries an already submitted letter, show this message",
+    "group"  : "Messages"
+  },
+  "msg_no_game_running": {
+    "type"   : "textbox",
+    "value"  : "There is no game running at the moment!",
+    "label"  : "No game running",
+    "tooltip": "If someone tries to guess without a running game ",
+    "group"  : "Messages"
+  },
+  "msg_usage_guess": {
+    "type"   : "textbox",
+    "value"  : "Usage: $command <letter>",
+    "label"  : "Letter guess command usage\n  $command - letter command",
+    "tooltip": "Show the correct usage of this command",
+    "group"  : "Messages"
+  },
+  "msg_usage_guessword": {
+    "type"   : "textbox",
+    "value"  : "Usage: $command your guess",
+    "label"  : "Word guess command usage\n  $command - word command",
+    "tooltip": "Show the correct usage of this command",
+    "group"  : "Messages"
+  },
+
+
+
+
+
+
+
+
+
+  "msg_win": {
+    "type"   : "textbox",
+    "value"  : "Congrats! $user defused the bomb and won $prize $currency",
+    "label"  : "User wins\n  $user - winning user\n  $prize - amount of points\n  $currency - currency name",
+    "tooltip": "When the user cuts the correct wire he wins and shows this message",
+    "group"  : "Messages"
+  },
+  "msg_retry": {
+    "type"   : "textbox",
+    "value"  : "This wire does nothing, try again",
+    "label"  : "User cut a dummy wire",
+    "tooltip": "If a user cuts a wire that is not connected, the user can try again",
+    "group"  : "Messages"
+  },
+  "msg_bomb_exploded": {
+    "type"   : "textbox",
+    "value"  : "BOOOM!!",
+    "label"  : "Bomb explode",
+    "tooltip": "No more tries, bomb wnt off!",
+    "group"  : "Messages"
+  },
+  "msg_already_planted": {
+    "type"   : "textbox",
+    "value"  : "You already have a bomb! Defuse it!",
+    "label"  : "User tries to plant again",
+    "tooltip": "If the user tries to plant another bomb say this message",
+    "group"  : "Messages"
+  },
+  "msg_cant_cut": {
+    "type"   : "textbox",
+    "value"  : "Can't cut imaginary wires! Do $command to plant a bomb!",
+    "label"  : "User tries to cut without a bomb\n  $command - command to plant",
+    "tooltip": "If the user tries to cut without a bomb show this message",
+    "group"  : "Messages"
+  },
+  "msg_wrong_color": {
+    "type"   : "textbox",
+    "value"  : "There is no $color wire!",
+    "label"  : "User cuts non-existing wire",
+    "tooltip": "If the user cuts an non-existing wire like brown or purple show this message",
+    "group"  : "Messages"
+  },
+  "msg_usage": {
+    "type"   : "textbox",
+    "value"  : "Usage: $command color",
+    "label"  : "User doesn't specify a color",
+    "tooltip": "If the user doesn't specify a color when cutting a wire send this message",
+    "group"  : "Messages"
+  }
+}
