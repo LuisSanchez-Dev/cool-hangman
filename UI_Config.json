@@ -144,6 +144,13 @@
     "tooltip": "When someone guesses the entire word correctly",
     "group"  : "Messages"
   },
+  "msg_cd": {
+    "type"   : "textbox",
+    "value"  : "$command is on cooldown for $user, wait $remaining seconds!",
+    "label"  : "Cooldown message\n  $command - command in cooldown\n  $user - username\n  $remaining - number of seconds remaining",
+    "tooltip": "Message shown when the user guesses a letter that is not in the main word",
+    "group"  : "Messages"
+  },
   "msg_letter_not_in_word": {
     "type"   : "textbox",
     "value"  : "The letter $letter is not in the word :(",
